@@ -1,5 +1,6 @@
-.TableBody, tr {
-    border-bottom: 1px solid darkgray;
+.TableBody tr {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 .TableBody button {

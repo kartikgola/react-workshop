@@ -20,26 +20,25 @@ export default class Form extends React.Component {
         });
     }
 
-    submitForm = () => {
+    submitForm = (e) => {
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
+        e.preventDefault();
     }
 
     render() {
         const {priority, item} = this.state;
 
         return (
-            <form className="Form-add">
+            <form className="Form-add" onSubmit={this.submitForm}>
                 <div className="Form-section">
-                    <label>Priority:</label>
-                    <input type="text" name="priority" value={priority} onChange={this.handleChange} />
+                    <input type="text" name="priority" placeholder="Enter priority..." value={priority} onChange={this.handleChange} />
                 </div>
                 <div className="Form-section">
-                    <label>Item:</label>
-                    <input type="text" name="item" value={item} onChange={this.handleChange} />
+                    <input type="text" required name="item" placeholder="Enter text..." value={item} onChange={this.handleChange} />
                 </div>
                 <div className="Form-section">
-                    <button type="button" onClick={this.submitForm}>Add</button>
+                    <button type="submit">Add</button>
                 </div>
             </form>
         )

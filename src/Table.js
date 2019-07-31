@@ -9,7 +9,9 @@ export default class Table extends React.Component {
 
         return (
             <table className="Table">
-                <TableHeader />
+                {
+                    bodyData.length > 0 && <TableHeader />
+                }
                 <TableBody bodyData={bodyData} removeData={removeData} />
             </table>
         )

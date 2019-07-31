@@ -2,11 +2,18 @@
   text-align: center;
 }
 
+.App button {
+  cursor: pointer;
+}
+
 .App > main {
   margin: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .App-header {
@@ -21,9 +28,10 @@
 
 .App-footer {
   position: fixed;
+  background: black;
+  color: white;
   height: 1rem;
   width: 100%;
   bottom: 0;
   font-size: 0.8rem;
-  background-color: gray;
 }

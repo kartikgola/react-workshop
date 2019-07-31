@@ -1,12 +1,12 @@
 import React from 'react';
+import './TableHeader.css';
 
 export default function TableHeader() {
     return (
-        <thead>
+        <thead className="TableHeader">
           <tr>
             <th>Priority</th>
             <th>Item</th>
-            <th>Remove</th>
           </tr>
         </thead>
       )

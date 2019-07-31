@@ -32,9 +32,10 @@ export default class App extends React.Component {
 
 
   handleSubmit = data => {
-    this.setState({
-      bodyData: [...this.state.bodyData, data]
-    });
+    if ( data && data.item )
+      this.setState({
+        bodyData: [...this.state.bodyData, data]
+      });
   }
 
   render() {
