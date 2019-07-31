@@ -21,11 +21,11 @@ export default class App extends React.Component {
     };
   }
 
-  removeTodo = index => {
+  removeTodo = todo => {
     const { todoList } = this.state;
     this.setState({
-      todoList: todoList.filter((todo, i) => {
-        return i !== index;
+      todoList: todoList.filter(_todo => {
+        return _todo !== todo;
       })
     });
   }

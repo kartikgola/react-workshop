@@ -4,7 +4,7 @@ import './TodoItem.css';
 export default class TodoItem extends React.Component {
 
     render() {
-      const { todo, toggleDone } = this.props;
+      const { todo, toggleDone, removeTodo } = this.props;
 
       return (
         <section className="TodoItem">
@@ -13,6 +13,9 @@ export default class TodoItem extends React.Component {
             </div>
             <div className="content">
                 <input type="text" name="text" defaultValue={todo.text} />
+            </div>
+            <div className="meta">
+                <button type="button" name="remove" onClick={() => removeTodo(todo)}>x</button>
             </div>
         </section>
       );
