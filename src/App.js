@@ -8,7 +8,16 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bodyData: []
+      bodyData: [
+        {
+          priority: 'P1',
+          item: 'Learn React.js'
+        },
+        {
+          priority: 'P2',
+          item: 'Drink Coffee!'
+        }
+      ]
     };
   }
 
