@@ -4,12 +4,12 @@ import TableHeader from './TableHeader';
 
 export default class Table extends React.Component {
     render() {
-        const { bodyData } = this.props;
+        const { bodyData, removeData } = this.props;
 
         return (
             <table>
                 <TableHeader />
-                <TableBody bodyData={bodyData} />
+                <TableBody bodyData={bodyData} removeData={removeData} />
             </table>
         )
     }

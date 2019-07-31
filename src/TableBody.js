@@ -7,6 +7,9 @@ export default function TableBody(props) {
             <tr key={i}>
                 <td>{row.name}</td>
                 <td>{row.job}</td>
+                <td>
+                    <button onClick={() => props.removeData(i)}>Delete</button>
+                </td>
             </tr>
         );
     });
