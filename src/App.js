@@ -1,45 +1,61 @@
 import React from 'react';
 import './App.css';
-import Table from './Table';
-import Form from './Form';
+import TodoList from './TodoList';
+import AddTodo from './AddTodo';
 
 export default class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      bodyData: [
+      todoList: [
         {
-          priority: 'P1',
-          item: 'Learn React.js'
+          isDone: false,
+          text: 'Learn React.js'
         },
         {
-          priority: 'P2',
-          item: 'Drink Coffee!'
+          isDone: true,
+          text: 'Create todo app'
         }
       ]
     };
   }
 
-  removeData = removeIndex => {
-    const { bodyData } = this.state;
+  removeTodo = index => {
+    const { todoList } = this.state;
     this.setState({
-      bodyData: bodyData.filter((data, i) => {
-        return i !== removeIndex;
+      todoList: todoList.filter((todo, i) => {
+        return i !== index;
       })
     });
   }
 
 
-  handleSubmit = data => {
-    if ( data && data.item )
+  addTodo = event => {
+    if ( event.key === 'Enter' ) {
+      const { todoList } = this.state;
       this.setState({
-        bodyData: [...this.state.bodyData, data]
+        todoList: [...todoList, { isDone: false, text: event.target.value }]
       });
+      event.target.value = "";
+    }
+  }
+
+  toggleDone = todo => {
+    this.setState((state, props) => {
+      const _todoList = state.todoList.slice();
+      for ( const _todo of _todoList ) {
+        if ( _todo === todo ) {
+          _todo.isDone = !_todo.isDone;
+          break;
+        }
+      }
+      return { todoList: _todoList };
+    });
   }
 
   render() {
-    const { bodyData } = this.state;
+    const { todoList } = this.state;
 
     return (
       <div className="App">
@@ -47,11 +63,10 @@ export default class App extends React.Component {
           Just Another To-do App
         </header>
         <main>
-          <Table bodyData={bodyData} removeData={this.removeData}/>
-          <Form handleSubmit={this.handleSubmit} />
+          <TodoList todoList={todoList} toggleDone={this.toggleDone} addTodo={this.addTodo} removeTodo={this.removeTodo}/>
+          <AddTodo addTodo={this.addTodo} />
         </main>
-        <footer className="App-footer">
-          Developed by Kartik Gola
+        <footer>
         </footer>
       </div>
     );

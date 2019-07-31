@@ -25,13 +25,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.App-footer {
-  position: fixed;
-  background: black;
-  color: white;
-  height: 1rem;
-  width: 100%;
-  bottom: 0;
-  font-size: 0.8rem;
-}
