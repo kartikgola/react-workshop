@@ -4,8 +4,8 @@ export default function TableHeader() {
     return (
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Job</th>
+            <th>Priority</th>
+            <th>Item</th>
             <th>Remove</th>
           </tr>
         </thead>

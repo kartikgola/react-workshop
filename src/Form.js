@@ -1,11 +1,12 @@
 import React from 'react';
+import './Form.css';
 
 export default class Form extends React.Component {
     constructor(props) {
         super(props);
         this.initialState = {
-            name: '',
-            job: ''
+            priority: '',
+            item: ''
         };
 
         this.state = this.initialState;
@@ -25,15 +26,21 @@ export default class Form extends React.Component {
     }
 
     render() {
-        const {name, job} = this.state;
+        const {priority, item} = this.state;
 
         return (
-            <form>
-                <label>Name:</label>
-                <input type="text" name="name" value={name} onChange={this.handleChange} />
-                <label>Job:</label>
-                <input type="text" name="job" value={job} onChange={this.handleChange} />
-                <button type="button" onClick={this.submitForm}>Submit</button>
+            <form className="Form-add">
+                <div className="Form-section">
+                    <label>Priority:</label>
+                    <input type="text" name="priority" value={priority} onChange={this.handleChange} />
+                </div>
+                <div className="Form-section">
+                    <label>Item:</label>
+                    <input type="text" name="item" value={item} onChange={this.handleChange} />
+                </div>
+                <div className="Form-section">
+                    <button type="button" onClick={this.submitForm}>Add</button>
+                </div>
             </form>
         )
     }

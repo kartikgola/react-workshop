@@ -34,7 +34,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          Just Another Table
+          Just Another To-do App
         </header>
         <main>
           <Table bodyData={bodyData} removeData={this.removeData}/>

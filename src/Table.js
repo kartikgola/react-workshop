@@ -1,4 +1,5 @@
 import React from 'react';
+import './Table.css';
 import TableBody from './TableBody';
 import TableHeader from './TableHeader';
 
@@ -7,7 +8,7 @@ export default class Table extends React.Component {
         const { bodyData, removeData } = this.props;
 
         return (
-            <table>
+            <table className="Table">
                 <TableHeader />
                 <TableBody bodyData={bodyData} removeData={removeData} />
             </table>
