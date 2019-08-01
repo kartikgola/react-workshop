@@ -1,0 +1,12 @@
+.AddTodo {
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem;
+    min-width: 20rem;
+}
+
+.AddTodo input {
+    border: none;
+    border-bottom: 1px solid darkgray;
+    width: 100%;
+}

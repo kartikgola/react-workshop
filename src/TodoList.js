@@ -5,12 +5,16 @@ import TodoItem from './TodoItem';
 export default class TodoList extends React.Component {
 
   render() {
-    const { todoList, removeTodo, toggleDone } = this.props;
+    const { todoList, removeTodo, toggleDone, editTodo } = this.props;
 
     return (
-        todoList.map((todo, i) => (
-            <TodoItem key={i} toggleDone={toggleDone} removeTodo={removeTodo} todo={todo} />
-        ))
+        <section className="TodoList">
+          {
+            todoList.map((todo, i) => (
+              <TodoItem key={i} toggleDone={toggleDone} removeTodo={removeTodo} todo={todo} editTodo={editTodo} />
+            ))
+          }
+        </section>
     );
   }
 }

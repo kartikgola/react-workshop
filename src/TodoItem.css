@@ -1,0 +1,21 @@
+.TodoItem {
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem 0.5rem;
+    min-width: 22vw;
+}
+
+.TodoItem .content input {
+    border: none;
+    border-bottom: 1px solid crimson;
+}
+
+.TodoItem .content input.done {
+    border: none;
+    border-bottom: 1px solid green;
+}
+
+.TodoItem .meta .delete {
+    border-radius: 3px;
+    border: 1px solid darkgray;
+}

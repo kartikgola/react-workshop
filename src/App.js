@@ -54,6 +54,20 @@ export default class App extends React.Component {
     });
   }
 
+  editTodo = (event, todo) => {
+    const value = event.target.value;
+    this.setState((state, props) => {
+      const _todoList = state.todoList.slice();
+      for ( const _todo of _todoList ) {
+        if ( _todo === todo ) {
+          _todo.text = value;
+          break;
+        }
+      }
+      return { todoList: _todoList };
+    });
+  }
+
   render() {
     const { todoList } = this.state;
 
@@ -63,7 +77,7 @@ export default class App extends React.Component {
           Just Another To-do App
         </header>
         <main>
-          <TodoList todoList={todoList} toggleDone={this.toggleDone} addTodo={this.addTodo} removeTodo={this.removeTodo}/>
+          <TodoList todoList={todoList} toggleDone={this.toggleDone} addTodo={this.addTodo} removeTodo={this.removeTodo} editTodo={this.editTodo} />
           <AddTodo addTodo={this.addTodo} />
         </main>
         <footer>
